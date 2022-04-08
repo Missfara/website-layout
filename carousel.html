@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Component</title>
+    <style>
+      /*
+            SPACING SYSTEM (px)
+            2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+            FONT SIZE SYSTEM (px)
+            10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+            */
+
+      /*
+            MAIN COLOR:#087f5b
+            GREY COLOR:#343a40
+            */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ------------------------ */
+      /* GENERAL STYLES */
+      /* ------------------------ */
+      body {
+        font-family: "inter" sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+
+      .carousel {
+        background-color: #087f5b;
+        width: 800px;
+        margin: 100px auto;
+        border-radius: 8px;
+        /*color: #fff;*/
+        /*padding: 32px;
+        padding-left: 86px;
+        padding-right: 48px;*/
+        padding: 32px 48px 32px 86px;
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        position: relative;
+      }
+      img {
+        height: 200px;
+        transform: scale(1.5);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .testimonial-text {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 32px;
+        color: #e6fcf5;
+      }
+
+      .testimonial-author {
+        font-size: 14px;
+        margin-bottom: 4px;
+        color: #c3fae8;
+      }
+
+      .testimonial-job {
+        font-size: 12px;
+        color: #c3fae8;
+      }
+      .btn {
+        background-color: #fff;
+        border: none;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        border-radius: 50%;
+        stroke: #087f5b;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.274);
+        cursor: pointer;
+
+        /* display: flex;
+              align-items: center;
+              justify-content: center;*/
+      }
+
+      .btn-op {
+        height: 24px;
+        width: 24px;
+      }
+      .btn-left {
+        /* in relation to parent element*/
+        left: -25px;
+
+        /* in relation to element itself (THIS IS ANOTHER METHOD)
+               top: 50%;
+              transform: translate(0 -50%);
+              transform: translate(-50%, -50%);*/
+      }
+
+      .btn-right {
+        right: -25px;
+        /*ANOTHER METHOD
+              top:"50%";
+              transform: translate(50%, 50%);*/
+      }
+      .dots {
+        position: absolute;
+        left: 50%;
+        transform: translate(32px, 25px);
+        /* ANOTHER METHOD
+              transform: translate(-50%, 32px) ;*/
+        bottom: 0;
+
+        display: flex;
+        gap: 12px;
+      }
+
+      .dot {
+        height: 10px;
+        width: 10px;
+        background-color: #fff;
+        border: 2px solid #087f5b;
+        border-radius: 55%;
+        cursor: pointer;
+      }
+      .gig {
+        background-color: #087f5b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <img src="maria.jpg" alt="Maria de Almeida" />
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+          aliquam cumque veritatis ratione iusto hic fuga quaerat facilis
+          maiores voluptatem perspiciatis"
+        </p>
+        <p class="testimonial-author">Maria de Almeida</p>
+        <p class="testimonial-job">Senior Product Manager at EDP Commercials</p>
+      </blockquote>
+      <button class="btn btn-left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="btn-op"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+      <button class="btn btn-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="btn-op"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <div class="dots">
+        <button class="dot gig">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
+    </div>
+  </body>
+</html>
